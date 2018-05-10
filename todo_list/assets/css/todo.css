@@ -1,13 +1,18 @@
 body {
 	font-family: 'Permanent Marker', cursive;
-	background-color: ;
-}
+	background-image: url(https://www.walldevil.com/wallpapers/a74/wood-wallpaper-backgrounds-design-pixel-texture-brown-light.jpg);
+	}
 
 h1 {
 	margin: 0;
 	padding: 10px 20px;
 	text-transform: uppercase;
 	font-weight: normal;
+}
+
+.fa-plus {
+	float: right;
+
 }
 
 ul {
@@ -19,19 +24,42 @@ ul {
 li {
 	height: 40px;
 	line-height: 40px;
-	font-size: 125%;
+	font-size: 20px;
+}
+
+li span {
+	background-color: #e74c3c;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0;
+	display: inline-block;
+	transition: 0.2s linear;
+	opacity: 0;
+}
+
+li:hover span {
+	width: 40px;
+	opacity: 1.0;
 }
 
 input {
 	width: 100%;
-	font-size: 18px;
+	font-size: 20px;
+	font-family: 'Permanent Marker', cursive;
 	background-color: #feff9c;
 	padding: 13px 13px 13px 20px;
+	border: none;
 	box-sizing: border-box;
 }
 
 input:focus{
 	outline: none;
+}
+
+input::-webkit-input-placeholder {
+	font-family: 'Permanent Marker', cursive;
 }
 
 #container {
@@ -45,4 +73,5 @@ input:focus{
 	color: grey;
 	text-decoration: line-through;
 }
+
 
