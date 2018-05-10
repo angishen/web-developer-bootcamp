@@ -4,16 +4,25 @@
 	<title>Circles!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/circles.css">
 	<script type="text/javascript" src="assets/js/lib/paper-full.min.js"></script>
-	<script type="text/paperscript" canvas="myCanvas">
-		var myCircle = new Path.Circle(new Point(100, 70), 50);
-		myCircle.fillColor = 'green';
+	<script type="text/papercript" canvas="myCanvas">
 
-		var circle2 = new Path.Circle(new Point(200, 150), 100);
-		circle2.fillColor = 'blue';
+		function onKeyDown(event) {
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randPoint = Point.random();
+			var myPoint = maxPoint * randPoint;
+			var circle = new Path.Circle(myPoint, 100)
+			circle.fillColor = "orange";
+		};
+
+		// var myCircle = new Path.Circle(new Point(200, 200), 100)
+		// myCircle.fillColor = "red"
+		// function onFrame(event) {
+		// 	myCircle.fillColor.hue += 1;
+		// };
+
 	</script>
-</head>
+</head>p
 <body>
-
 <canvas id="myCanvas" resize></canvas>
 </body>
 </html>

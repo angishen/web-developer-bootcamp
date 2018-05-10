@@ -4,12 +4,19 @@
 	<title>Paper.js Practice</title>
 	<script type="text/javascript" src="assets/js/lib/paper-full.min.js"></script>
 	<script type="text/paperscript" canvas="myCanvas">
+		var colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+
+		function getRandomInt(max) {
+			return Math.floor(Math.random() * Math.floor(max));
+		};
+
 		for (var i = 0; i <=10; i++) {
 			for (var j = 0; j <= 10; j++) {
 				var myCircle = new Path.Circle(new Point(i*100, j*100), 10);
-				myCircle.fillColor = 'purple';
+				myCircle.fillColor = colors[getRandomInt(colors.length)]
 			};
-		};
+		};	
+
 	</script>
 	<style type="text/css">
 		canvas {
