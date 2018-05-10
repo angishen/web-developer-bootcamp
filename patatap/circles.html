@@ -4,6 +4,7 @@
 	<title>Circles!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/circles.css">
 	<script type="text/javascript" src="assets/js/lib/paper-full.min.js"></script>
+	<script type="text/javascript" src="assets/js/lib/hower.min.js"></script>
 	<script type="text/paperscript" canvas="myCanvas">
 
 		var circles = [];
@@ -13,33 +14,31 @@
 			var point = maxPoint * randPoint;
 			var radius = Math.random() * (700 - 400) + 400;
 			var circle = new Path.Circle(point, radius);
-			circle.fillColor = generateRandomHex();
-			console.log(generateRandomHex());
+			circle.fillColor = "orange";
 			circles.push(circle);
 		};
 
 		function onFrame(event) {
 			for(var i = 0; i < circles.length; i++) {
-				circles[i].fillColor.hue += 1;
+				circles[i].fillColor.hue += 2;
 				circles[i].scale(0.9);
 			};
 		};
 
-		// generate a random hex color value
-		function generateRandomHex() {
-			var hexVals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
-						   'a', 'b', 'c', 'd', 'e', 'f'];
-			hexCode = "#";
-			for(var i = 0; i < 6; i++) {
-				randomIdx = getRandomInt(0, hexVals.length);
-				hexCode += hexVals[randomIdx]
-			};
-			return hexCode;
-		};
-		// generate random integer in range [min, max] (min inclusive, max exclusive)
-		function getRandomInt(min, max) {
-			return Math.floor(Math.random()  * (max - min)) + min;
-		};
+		// // generate a random rgb color value
+		// function generateRandomRGB() {
+		// 	var rgbVal = "rgb(";
+		// 	for(var i = 0; i < 3; i++) {
+		// 		channelVal = generateRandomInt(128, 256)
+		// 		rgbVal += channelVal + ",";
+		// 	};
+		// 	return rgbVal.slice(0,-1) + ")"
+		// };
+
+		// // generate random integer in range [min, max] (min inclusive, max exclusive)
+		// function generateRandomInt(min, max) {
+		// 	return Math.floor(Math.random()  * (max - min)) + min;
+		// };
 
 	</script>
 </head>
