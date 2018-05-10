@@ -8,6 +8,7 @@ $("ul").on("click", "span", function(e){
 	$(this).parent().fadeOut(500, function(){
 		$(this).remove()
 	});
+	// stops event from bubbling up to parent elements
 	e.stopPropagation();
 });
 
